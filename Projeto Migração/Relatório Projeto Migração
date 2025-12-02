@@ -1,0 +1,52 @@
+RELATÓRIO DE IMPLEMENTAÇÃO DE SERVIÇOS AWS
+Data: 01/Dezembro/2025 Empresa: Farmácia DaEskina Responsável: Pedro M. Galvão
+
+Introdução
+Este relatório apresenta o processo de implementação de ferramentas na empresa Abstergo Industries, realizado por Pedro M. Galvão. O objetivo do projeto foi elencar 3 serviços AWS, com a finalidade de realizar diminuição de custos operacionais imediatos, especialmente na criação e manutenção de uma plataforma virtual de e-commerce e gerenciamento de dados da farmácia.
+
+Descrição do Projeto
+O projeto de implementação de ferramentas foi dividido em 3 etapas, cada uma com seus objetivos específicos. A seguir, serão descritas as etapas do projeto:
+
+Etapa 1: Armazenamento Inteligente e de Baixo Custo
+Nome da ferramenta: Amazon Simple Storage Service (S3) com Intelligent-Tiering
+
+Foco da ferramenta: Redução de custos de armazenamento de dados (arquivos, imagens de produtos, documentos fiscais, backups) e eliminação de infraestrutura local de armazenamento.
+
+Descrição de caso de uso: A farmácia possui um grande volume de dados estáticos, como imagens de milhares de produtos da loja virtual, documentos digitais de receita e relatórios de anos anteriores (dados frios). Anteriormente, esses dados eram armazenados em servidores locais ou em soluções de armazenamento em nuvem sem otimização de custo. Com o Amazon S3 Intelligent-Tiering, os arquivos são armazenados e monitorados. Os dados acessados com pouca frequência (como relatórios antigos) são automaticamente movidos para camadas de armazenamento mais baratas (Archive/Deep Archive), sem qualquer impacto no acesso quando necessário. Isso reduz drasticamente o custo por GB armazenado, eliminando a necessidade de upgrades de hardware local e diminuindo custos com energia e manutenção.
+
+Etapa 2: Execução de Processos Serverless
+Nome da ferramenta: AWS Lambda
+
+Foco da ferramenta: Eliminação de servidores ociosos e pagamento estritamente pelo uso do código (serverless) para tarefas pontuais.
+
+Descrição de caso de uso: Pequenas lógicas de negócio da plataforma virtual, como o envio de e-mails de confirmação de pedido, o processamento de pagamentos via API de terceiros, ou a geração de relatórios de vendas noturnos, exigiam que instâncias de servidores virtuais (EC2) estivessem ativas 24/7. Com o AWS Lambda, essas funções são reescritas como pequenas rotinas que só são executadas sob demanda. O custo de computação é cobrado apenas pelo tempo de execução (milisegundos) e pelo número de requisições, eliminando o custo fixo de manter servidores ociosos, resultando em uma economia significativa imediata para tarefas esporádicas.
+
+Etapa 3: Banco de Dados Gerenciado Otimizado
+Nome da ferramenta: Amazon Relational Database Service (RDS)
+
+Foco da ferramenta: Redução de custos de mão de obra e licenças com gerenciamento, patching, backups e alta disponibilidade do banco de dados (que suporta a loja virtual e o sistema de estoque).
+
+Descrição de caso de uso: O banco de dados da farmácia (SQL Server ou MySQL/PostgreSQL autogerenciado) requeria tempo de um profissional de TI para manutenção, backups e aplicação de patches de segurança. Migrando para o Amazon RDS (utilizando um motor de baixo custo como o PostgreSQL), a AWS assume as tarefas operacionais pesadas, como backups automáticos, replicação (alta disponibilidade) e correções de segurança. Além de aumentar a confiabilidade da plataforma virtual, a farmácia elimina os custos de licenças caras (se aplicável) e libera a equipe de TI para focar em atividades estratégicas, resultando em uma redução direta do custo operacional associado à administração de banco de dados.
+
+Conclusão
+A implementação de ferramentas na empresa Farmácia DaEskina tem como esperado a otimização imediata dos custos de infraestrutura através de um modelo de pagamento por uso (Pay-as-you-go), a eliminação da necessidade de upgrades em hardware local e a redução dos gastos com manutenção e licenças, o que aumentará a eficiência e a produtividade da empresa.
+
+Os benefícios imediatos incluem:
+
+Redução de Custo de Armazenamento (>30%) ao mover dados inativos para camadas mais frias (S3 Intelligent-Tiering).
+
+Eliminação de Custos de Computação Ociosa com a adoção do modelo serverless (AWS Lambda).
+
+Diminuição de Custos com Administração e Licenças de Banco de Dados (Amazon RDS).
+
+Recomenda-se a continuidade da utilização das ferramentas implementadas e a busca por novas tecnologias que possam melhorar ainda mais os processos da empresa, como o uso de ferramentas de monitoramento de custos (AWS Cost Explorer e Trusted Advisor) para otimizações futuras.
+
+Anexos
+Diagrama de Arquitetura da Plataforma Virtual na AWS.
+
+Estimativa de Custos AWS (TCO - Total Cost of Ownership) pré e pós-implementação.
+
+
+Assinatura do Responsável pelo Projeto:
+
+Pedro Mendonça Galvão
